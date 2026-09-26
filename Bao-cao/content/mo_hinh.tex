@@ -5,21 +5,7 @@ Từ bộ dữ liệu đã làm sạch, biến mục tiêu \texttt{is\_fraud} l�
 \subsection{Chia tập dữ liệu}
 Bộ dữ liệu 30\,058 giao dịch được chia theo tỷ lệ 80–20 bằng hàm \texttt{train\_test\_split} với \texttt{stratify = y} và \texttt{random\_state = 42}, cho tập huấn luyện 24\,046 mẫu, trong đó có 106 giao dịch gian lận, và tập kiểm tra 6\,012 mẫu, trong đó có 27 giao dịch gian lận. Tập huấn luyện được chia tiếp thành hai phần: phần Fit gồm 19\,236 mẫu, chiếm 80\%, dùng để huấn luyện và tinh chỉnh mô hình; phần Validation gồm 4\,810 mẫu, chiếm 20\%, dùng riêng để chọn ngưỡng quyết định. Tập kiểm tra chỉ được dùng đúng một lần để đánh giá cuối cùng.
 
-Để tránh rò rỉ dữ liệu, mọi quy tắc học từ dữ liệu đều được tính riêng trên tập huấn luyện rồi mới áp dụng sang tập kiểm tra: giới hạn xử lý giá trị bất thường được suy ra từ tập huấn luyện, \texttt{StandardScaler} và \texttt{TargetEncoder} chỉ được học trên tập huấn luyện. Các giá trị bất thường của đặc trưng số được giới hạn theo quy tắc IQR tính trên tập huấn luyện thay vì bị xóa, vì giá trị bất thường có thể chính là giao dịch gian lận. Hình \ref{fig:code_split} và Hình \ref{fig:code_prep} trình bày đoạn chương trình chia dữ liệu và tiền xử lý.
-
-\begin{figure}[H]
-    \centering
-    \includegraphics[width=0.9\linewidth,height=0.9\textheight,keepaspectratio]{figures/code_split.png}
-    \caption{Đoạn chương trình chia tập dữ liệu và giới hạn giá trị bất thường}
-    \label{fig:code_split}
-\end{figure}
-
-\begin{figure}[H]
-    \centering
-    \includegraphics[width=\linewidth,height=0.9\textheight,keepaspectratio]{figures/code_prep.png}
-    \caption{Đoạn chương trình mã hóa và chuẩn hóa đặc trưng}
-    \label{fig:code_prep}
-\end{figure}
+Để tránh rò rỉ dữ liệu, mọi quy tắc học từ dữ liệu đều được tính riêng trên tập huấn luyện rồi mới áp dụng sang tập kiểm tra: giới hạn xử lý giá trị bất thường được suy ra từ tập huấn luyện, \texttt{StandardScaler} và \texttt{TargetEncoder} chỉ được học trên tập huấn luyện. Các giá trị bất thường của đặc trưng số được giới hạn theo quy tắc IQR tính trên tập huấn luyện thay vì bị xóa, vì giá trị bất thường có thể chính là giao dịch gian lận.
 
 \section{Các chỉ số đánh giá mô hình}
 Do tính chất mất cân bằng nghiêm trọng của dữ liệu, mô hình được đánh giá bằng các chỉ số Precision, Recall, F1-Score, F2-Score, ROC-AUC và PR-AUC:
@@ -61,7 +47,7 @@ Trọng số tự động cân bằng & CatBoost & \texttt{auto\_class\_weights 
 Chiến lược SMOTE được đặt trong một \texttt{Pipeline} nhằm bảo đảm việc sinh dữ liệu tổng hợp chỉ diễn ra bên trong từng fold cross-validation, không làm rò rỉ thông tin vào tập xác thực.
 
 \section{Lựa chọn ngưỡng quyết định}
-Mô hình học máy trả về xác suất gian lận cho mỗi giao dịch. Thay vì dùng ngầm định ngưỡng 0{,}5, đồ án chọn ngưỡng tối ưu riêng cho từng mô hình trên tập Validation theo tiêu chí F2-Score cao nhất, đồng thời yêu cầu Precision tối thiểu 0{,}10 để tránh cảnh báo tràn lan. Cách tiếp cận này giúp ngưỡng được chọn độc lập với tập kiểm tra, và việc chỉ đánh giá một lần duy nhất trên tập kiểm tra giữ cho kết quả cuối cùng không bị lạc quan.
+Mô hình học máy trả về xác suất gian lận cho mỗi giao dịch. Thay vì dùng ngầm định ngưỡng 0{,}5, đồ án chọn ngưỡng tối ưu riêng cho từng mô hình trên tập Validation theo tiêu chí F2-Score cao nhất, đồng thời yêu cầu Precision tối thiểu 0{,}6 trên tập Validation để tránh cảnh báo tràn lan. Ràng buộc này được kiểm tra khi duyệt các ngưỡng ứng viên, nên ngưỡng cuối cùng chỉ được chọn trong vùng mà độ chính xác đã đủ cao; nếu một mô hình không đạt được ngưỡng này thì vẫn lấy ngưỡng có F2-Score cao nhất trong số các ngưỡng ứng viên. Cách tiếp cận này giúp ngưỡng được chọn độc lập với tập kiểm tra, và việc chỉ đánh giá một lần duy nhất trên tập kiểm tra giữ cho kết quả cuối cùng không bị lạc quan.
 
 \section{Mô hình Random Forest}
 Random Forest \cite{breiman2001randomforest} xây dựng nhiều cây quyết định trên các mẫu bootstrap khác nhau và lấy biểu quyết từ các cây, giúp giảm phương sai và ít bị ảnh hưởng bởi nhiễu. Không gian siêu tham số được khảo sát được trình bày trong Bảng \ref{tab:rf_params}. Điều chỉnh trọng số lớp kết hợp với giới hạn độ sâu giúp các cây tập trung hơn vào lớp thiểu số mà không quá khớp nhiễu.
@@ -163,10 +149,10 @@ Sau khi \texttt{RandomizedSearchCV} với 60 lần thử trên cross-validation 
 
 \begin{table}[H]
 \centering
-\fontsize{11}{13.6}\selectfont
-\renewcommand{\arraystretch}{1.2}
-\setlength{\tabcolsep}{6pt}
-\begin{tabularx}{\textwidth}{|p{4.8cm}|X|}
+\fontsize{10.5}{12.6}\selectfont
+\renewcommand{\arraystretch}{1.05}
+\setlength{\tabcolsep}{9pt}
+\begin{tabular}{|>{\raggedright\arraybackslash}p{4.1cm}|>{\centering\arraybackslash}p{2.9cm}|}
 \hline
 \textbf{Tham số} & \textbf{Giá trị tối ưu} \\
 \hline
@@ -190,7 +176,7 @@ Sau khi \texttt{RandomizedSearchCV} với 60 lần thử trên cross-validation 
 \hline
 \texttt{scale\_pos\_weight} & 15{,}01 \\
 \hline
-\end{tabularx}
+\end{tabular}
 \caption{Bộ siêu tham số tối ưu của LightGBM theo \texttt{RandomizedSearchCV}}
 \label{tab:lgbm_best}
 \end{table}

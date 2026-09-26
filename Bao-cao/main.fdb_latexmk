@@ -1,17 +1,17 @@
 # Fdb version 4
-["biber main"] 1790337498.29306 "main.bcf" "main.bbl" "main" 1790338295.50723 0
-  "main.bcf" 1790338293.23596 109084 657df266d714ddda91e3440a029ea201 "xelatex"
+["biber main"] 1790337498.29306 "main.bcf" "main.bbl" "main" 1790411094.54008 0
+  "main.bcf" 1790411092.6287 109084 657df266d714ddda91e3440a029ea201 "xelatex"
   "references.bib" 1790337487.5296 5733 3d8f8e1bf9a60616d18c8b4e63637cf1 ""
   (generated)
   "main.bbl"
   "main.blg"
   (rewritten before read)
-["xdvipdfmx"] 1790338293.38468 "main.xdv" "main.pdf" "main" 1790338295.50977 0
-  "main.xdv" 1790338293.23897 667280 d2eeef70f9da2d642c427bcef81ec6a8 "xelatex"
+["xdvipdfmx"] 1790411092.76084 "main.xdv" "main.pdf" "main" 1790411094.54263 0
+  "main.xdv" 1790411092.6297 639104 03b44733d0b5eaca3e78131915822183 "xelatex"
   (generated)
   "main.pdf"
   (rewritten before read)
-["xelatex"] 1790338290.47186 "main.tex" "main.xdv" "main" 1790338295.50729 0
+["xelatex"] 1790411090.11948 "main.tex" "main.xdv" "main" 1790411094.54014 0
   "/usr/share/texmf-dist/fonts/map/fontname/texfonts.map" 1775415801 3524 cb3e574dea2d1052e39280babc910dc8 ""
   "/usr/share/texmf-dist/fonts/tfm/adobe/symbol/psyr.tfm" 1775415801 1408 5937f58aa508ea2cea4901c07d10f5fe ""
   "/usr/share/texmf-dist/fonts/tfm/adobe/zapfding/pzdr.tfm" 1775415801 1528 f853c4d1b4e0550255e02831fdc8496f ""
@@ -374,33 +374,31 @@
   "/usr/share/texmf-dist/tex/latex/zref/zref-base.sty" 1775415801 20785 198a9cb2e04238d92c320d0d9edbd76a ""
   "/usr/share/texmf-dist/web2c/texmf.cnf" 1775415801 43569 fd570f2fa160877d211e859f687312ba ""
   "/var/lib/texmf/web2c/xetex/xelatex.fmt" 1789324134 4836368 b018c1000f7952b7ba5bccad6e475827 ""
-  "content/danh_gia.tex" 1790338290.39552 32089 5528be175db8d02dcb4a812bff711795 ""
-  "content/eda.tex" 1790338127.23727 5663 b2d670fae74f951d5f5463aa5d5a6cab ""
+  "content/danh_gia.tex" 1790410838.77502 32367 7addab1acba863698e0ad753a6e443b7 ""
+  "content/eda.tex" 1790411083.21427 5663 b2d670fae74f951d5f5463aa5d5a6cab ""
   "content/gioi_thieu.tex" 1790337117.97828 4406 d76fa6eeb88c586b34c33144ee96bc61 ""
-  "content/ket_luan.tex" 1790337889.04754 6692 813198a0fb320a3b323bfe8cca0d8157 ""
-  "content/mo_hinh.tex" 1790338049.93354 18162 68d3958c04d27c6aad2a16e840d15c9e ""
+  "content/ket_luan.tex" 1790411008.54484 3186 98ef7aa3be3b8c72069fe428d34e338b ""
+  "content/mo_hinh.tex" 1790410610.5315 17901 f0c58e372bd5c48b23305278ae325cf1 ""
   "content/thu_thap_du_lieu.tex" 1790229666.74971 8294 27a49529b5fb108fd722a64eddc3acd4 ""
   "cover.pdf" 1789999505.28756 132453 d4189e13b974f35fb25d108a5ab8110c ""
   "figures/code_cleaning_1.png" 1790228739.62879 83585 701dfe51fca809941a531f94531cbc3a ""
   "figures/code_cleaning_2.png" 1790228740.32394 288644 0823349b40304db3bb4bf94010002a7a ""
   "figures/code_features_1.png" 1790228740.91207 235074 c9e67f7dc55f9ad94d357d2aa9b885db ""
-  "figures/code_prep.png" 1790228741.9593 151251 841e4cd0ecf428152176735401702468 ""
-  "figures/code_split.png" 1790228741.42182 113484 6268820ba287d6edbdd2e4c9a9d6b2cd ""
-  "figures/fig_calibration.png" 1790336684.34627 72747 dc812c4b7799bd6edfd97124df104900 ""
+  "figures/fig_calibration_lightgbm.png" 1790410493.52505 68032 dc3f86962199434517710dfd462e92b8 ""
   "figures/fig_confusion_matrix.png" 1790337338.63462 297022 6f070a55c5a09921cef1061d8336c3b7 ""
   "figures/fig_distributions.png" 1790230916.57286 41743 46b43d7077536211213b68d313f9b4f8 ""
   "figures/fig_experiment_compare.png" 1790336831.56385 251725 8c2b7c49d7e25ea87403f5999b8e58fe ""
   "figures/fig_fraud_category.png" 1790230916.57386 62123 21ee1f37503bf5170cca6fc945f13347 ""
   "figures/fig_outliers.png" 1790230916.57486 40657 51ab7cdcc9ac66ad94199389e117691c ""
-  "figures/fig_permutation_importance.png" 1790146042.37981 49456 d80c94b79db8e76bc894b88cbaab313e ""
+  "figures/fig_permutation_importance_lightgbm.png" 1790410493.52498 49299 5b5ba0ce1a22538a3171fcd99d0e5793 ""
   "figures/fig_pr_curve.png" 1790336684.3453 84271 93cae8ece303fad8ab13760053436b0a ""
   "figures/fig_scatter_features.png" 1790230916.57186 181529 5bfb7cfc54b5c6f5f8a303379c960eed ""
-  "main.aux" 1790338293.23296 21132 d2ce46c5e2e7d00e5f74cf22d3418457 "xelatex"
+  "main.aux" 1790411092.6247 20461 3104782213c83d1e4362dfe2feb8664b "xelatex"
   "main.bbl" 1790337498.86313 27923 ce0807a2c89781bcf494f4471b49eff9 "biber main"
-  "main.out" 1790338293.23396 7021 7461b3dcc5100a9cab9af9151521d17c "xelatex"
-  "main.run.xml" 1790338293.23897 2309 8c0877b865a1ddfe293629c28dac06e5 "xelatex"
+  "main.out" 1790411092.6267 7021 7461b3dcc5100a9cab9af9151521d17c "xelatex"
+  "main.run.xml" 1790411092.6297 2309 8c0877b865a1ddfe293629c28dac06e5 "xelatex"
   "main.tex" 1790164239.23631 4991 b475efbe3b3b50c623a5206d364ca22e ""
-  "main.toc" 1790338293.23897 4661 070b59492379903bd3b339af24b892eb "xelatex"
+  "main.toc" 1790411092.6297 4661 98902956ec777365fb9c315006beca16 "xelatex"
   (generated)
   "main.aux"
   "main.bcf"
