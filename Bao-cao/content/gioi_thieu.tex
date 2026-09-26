@@ -1,0 +1,21 @@
+\section{Đặt vấn đề}
+Sự phát triển nhanh chóng của các hình thức thanh toán điện tử và thẻ tín dụng giúp việc giao dịch trở nên thuận tiện, nhưng đồng thời cũng kéo theo nguy cơ gian lận ngày càng gia tăng. Các giao dịch gian lận gây thiệt hại lớn cho ngân hàng, đơn vị thanh toán và chính khách hàng \cite{bhattacharyya2011creditcard}, do đó việc phát hiện kịp thời các giao dịch bất thường là một bài toán quan trọng trong lĩnh vực tài chính.
+
+Đặc điểm nổi bật của bài toán phát hiện gian lận là dữ liệu thường mất cân bằng nghiêm trọng: số giao dịch gian lận chỉ chiếm một tỷ lệ rất nhỏ so với giao dịch bình thường \cite{he2009imbalanced, dalpozzolo2015credit}. Một mô hình đơn giản dự đoán tất cả giao dịch là hợp lệ vẫn có thể đạt Accuracy rất cao nhưng hoàn toàn bỏ sót gian lận. Vì vậy, bài toán cần được đánh giá bằng các chỉ số phù hợp như Recall, F2-Score hay PR-AUC thay vì chỉ dựa vào Accuracy \cite{davis2006pr}.
+
+Trong khuôn khổ môn học Trí tuệ nhân tạo, đề tài xây dựng một hệ thống học máy có khả năng phân loại một giao dịch tài chính thành hai nhóm: giao dịch hợp lệ (nhãn 0) và giao dịch gian lận (nhãn 1). Toàn bộ quy trình từ nạp dữ liệu, làm sạch, phân tích khám phá, tạo đặc trưng, xây dựng và đánh giá mô hình được thực hiện một cách bài bản trên cùng một bộ dữ liệu mô phỏng giao dịch thẻ tín dụng.
+
+\section{Mục tiêu của đề tài}
+Đề tài hướng tới các mục tiêu chính sau đây:
+\begin{itemize}
+    \item Xây dựng quy trình xử lý hoàn chỉnh cho dữ liệu giao dịch thẻ tín dụng: nạp dữ liệu, làm sạch, xử lý dữ liệu thiếu, tạo đặc trưng và chuẩn hóa dữ liệu.
+    \item Phân tích khám phá dữ liệu nhằm nhận diện các đặc điểm của giao dịch gian lận như loại hình dịch vụ có rủi ro cao, giá trị bất thường của số tiền giao dịch.
+    \item Xây dựng và huấn luyện năm thuật toán phân loại: Random Forest, XGBoost (hai cấu hình), LightGBM và CatBoost, kết hợp các kỹ thuật xử lý dữ liệu mất cân bằng như \texttt{class\_weight}, \texttt{scale\_pos\_weight}, \texttt{auto\_class\_weights} và SMOTE nhẹ; sau đó tích hợp các mô hình tốt nhất bằng kỹ thuật xếp chồng \texttt{StackingClassifier}.
+    \item Thiết kế sáu thử nghiệm có kiểm soát để đánh giá ảnh hưởng của phương pháp biểu diễn đặc trưng (đặc trưng gốc, \texttt{OneHotEncoder}, \texttt{TargetEncoder}) và của việc loại bỏ các đặc trưng chứa nhiễu, trong khi giữ nguyên quy trình chia tập và tinh chỉnh siêu tham số.
+    \item Đánh giá và so sánh hiệu suất các mô hình dựa trên các chỉ số Precision, Recall, F1-Score, F2-Score, ROC-AUC, PR-AUC, FNR và FPR; lựa chọn mô hình đề xuất cuối cùng.
+\end{itemize}
+
+\section{Phạm vi phân tích}
+Bộ dữ liệu của đề tài gồm 30\,058 giao dịch thẻ tín dụng mô phỏng được ghi nhận trong giai đoạn từ ngày 21/06 đến ngày 30/06/2020, với 23 cột thuộc tính mô tả thời gian giao dịch, thẻ, đơn vị chấp nhận thanh toán, loại hình dịch vụ, số tiền, vị trí địa lý và nhãn gian lận. Trong đó có 29\,925 giao dịch hợp lệ và 133 giao dịch gian lận, khiến lớp gian lận nhỏ hơn lớp hợp lệ 225 lần.
+
+Đề tài tập trung vào việc xây dựng và so sánh năm thuật toán Random Forest, XGBoost, LightGBM, CatBoost và mô hình xếp chồng Stacking trên cùng một bộ dữ liệu, cùng bốn chiến lược xử lý mất cân bằng lớp (điều chỉnh trọng số lớp, gán trọng số cho lớp thiểu số, trọng số tự động cân bằng và sinh dữ liệu tổng hợp SMOTE nhẹ). Các vấn đề về triển khai hệ thống phát hiện gian lận theo thời gian thực hay tích hợp nghiệp vụ ngân hàng không thuộc phạm vi nghiên cứu của đồ án.

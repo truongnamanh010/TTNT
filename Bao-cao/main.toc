@@ -1,0 +1,48 @@
+\babel@toc {vietnamese}{}\relax 
+\contentsline {chapter}{\numberline {1}GIỚI THIỆU}{1}{chapter.1}%
+\contentsline {section}{\numberline {1.1}Đặt vấn đề}{1}{section.1.1}%
+\contentsline {section}{\numberline {1.2}Mục tiêu của đề tài}{1}{section.1.2}%
+\contentsline {section}{\numberline {1.3}Phạm vi phân tích}{2}{section.1.3}%
+\contentsline {chapter}{\numberline {2}PHƯƠNG PHÁP THU THẬP VÀ TIỀN XỬ LÝ DỮ LIỆU}{3}{chapter.2}%
+\contentsline {section}{\numberline {2.1}Thu thập dữ liệu giao dịch}{3}{section.2.1}%
+\contentsline {section}{\numberline {2.2}Mô tả bộ dữ liệu}{3}{section.2.2}%
+\contentsline {section}{\numberline {2.3}Tiền xử lý dữ liệu}{5}{section.2.3}%
+\contentsline {subsection}{\numberline {2.3.1}Làm sạch dữ liệu}{5}{subsection.2.3.1}%
+\contentsline {subsection}{\numberline {2.3.2}Tạo đặc trưng}{6}{subsection.2.3.2}%
+\contentsline {chapter}{\numberline {3}PHÂN TÍCH KHÁM PHÁ DỮ LIỆU}{8}{chapter.3}%
+\contentsline {section}{\numberline {3.1}Phân bố dữ liệu}{8}{section.3.1}%
+\contentsline {section}{\numberline {3.2}Gian lận theo loại hình dịch vụ}{8}{section.3.2}%
+\contentsline {section}{\numberline {3.3}Giá trị bất thường}{9}{section.3.3}%
+\contentsline {section}{\numberline {3.4}Quan hệ giữa các đặc trưng}{10}{section.3.4}%
+\contentsline {chapter}{\numberline {4}XÂY DỰNG CÁC MÔ HÌNH HỌC MÁY}{12}{chapter.4}%
+\contentsline {section}{\numberline {4.1}Chuẩn bị dữ liệu cho mô hình}{12}{section.4.1}%
+\contentsline {subsection}{\numberline {4.1.1}Tách đặc trưng và biến mục tiêu}{12}{subsection.4.1.1}%
+\contentsline {subsection}{\numberline {4.1.2}Chia tập dữ liệu}{12}{subsection.4.1.2}%
+\contentsline {section}{\numberline {4.2}Các chỉ số đánh giá mô hình}{14}{section.4.2}%
+\contentsline {section}{\numberline {4.3}Xử lý dữ liệu mất cân bằng}{15}{section.4.3}%
+\contentsline {section}{\numberline {4.4}Lựa chọn ngưỡng quyết định}{15}{section.4.4}%
+\contentsline {section}{\numberline {4.5}Mô hình Random Forest}{15}{section.4.5}%
+\contentsline {section}{\numberline {4.6}Mô hình XGBoost}{16}{section.4.6}%
+\contentsline {section}{\numberline {4.7}Mô hình LightGBM}{16}{section.4.7}%
+\contentsline {subsection}{\numberline {4.7.1}Cấu hình tối ưu của LightGBM}{17}{subsection.4.7.1}%
+\contentsline {section}{\numberline {4.8}Mô hình CatBoost}{18}{section.4.8}%
+\contentsline {section}{\numberline {4.9}Kết hợp mô hình bằng Stacking}{18}{section.4.9}%
+\contentsline {section}{\numberline {4.10}Quá trình tinh chỉnh siêu tham số}{18}{section.4.10}%
+\contentsline {chapter}{\numberline {5}ĐÁNH GIÁ VÀ THẢO LUẬN KẾT QUẢ}{20}{chapter.5}%
+\contentsline {section}{\numberline {5.1}Phạm vi sáu thử nghiệm}{20}{section.5.1}%
+\contentsline {section}{\numberline {5.2}Kết quả từng thử nghiệm}{21}{section.5.2}%
+\contentsline {subsection}{\numberline {5.2.1}Thử nghiệm 1: sáu đặc trưng gốc}{21}{subsection.5.2.1}%
+\contentsline {subsection}{\numberline {5.2.2}Thử nghiệm 2: mã hóa One-Hot}{21}{subsection.5.2.2}%
+\contentsline {subsection}{\numberline {5.2.3}Thử nghiệm 3: mã hóa Target Encoder}{22}{subsection.5.2.3}%
+\contentsline {subsection}{\numberline {5.2.4}Thử nghiệm 4: loại bỏ bốn đặc trưng}{22}{subsection.5.2.4}%
+\contentsline {subsection}{\numberline {5.2.5}Thử nghiệm 5: loại bỏ \texttt {is\_night}, \texttt {amt\_vs\_card\_median}, \texttt {distance\_km}}{23}{subsection.5.2.5}%
+\contentsline {subsection}{\numberline {5.2.6}Thử nghiệm 6: loại bỏ \texttt {amt}, \texttt {amt\_vs\_card\_median}, \texttt {distance\_km}}{23}{subsection.5.2.6}%
+\contentsline {section}{\numberline {5.3}Giải thích ảnh hưởng của các đặc trưng}{23}{section.5.3}%
+\contentsline {section}{\numberline {5.4}Tổng hợp và so sánh sáu thử nghiệm}{25}{section.5.4}%
+\contentsline {section}{\numberline {5.5}Ma trận nhầm lẫn và đường Precision--Recall}{26}{section.5.5}%
+\contentsline {section}{\numberline {5.6}Lựa chọn mô hình phù hợp với bộ dữ liệu}{29}{section.5.6}%
+\contentsline {section}{\numberline {5.7}Đánh giá tính khả thi và hạn chế}{29}{section.5.7}%
+\contentsline {subsection}{\numberline {5.7.1}Điểm mạnh}{29}{subsection.5.7.1}%
+\contentsline {subsection}{\numberline {5.7.2}Hạn chế}{30}{subsection.5.7.2}%
+\contentsline {section}{\numberline {5.8}Hướng phát triển trong tương lai}{30}{section.5.8}%
+\contentsline {chapter}{\numberline {6}KẾT LUẬN}{32}{chapter.6}%

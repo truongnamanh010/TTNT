@@ -1,0 +1,54 @@
+\documentclass[a4paper]{article}
+\usepackage{fontspec}
+\setmainfont{Times New Roman}
+\usepackage{babel}
+\babelprovide[import, main]{vietnamese}
+\usepackage[paperwidth=595pt, paperheight=842pt, margin=0pt]{geometry}
+\usepackage{graphicx}
+\usepackage{tikz}
+\usetikzlibrary{calc}
+\usepackage{xcolor}
+\definecolor{titleblue}{RGB}{29,73,171}
+\pagestyle{empty}
+
+\begin{document}
+\begin{tikzpicture}[remember picture, overlay]
+  \coordinate (TL) at (current page.north west);
+
+  \node[anchor=north west, inner sep=0pt] at (TL) {\includegraphics[width=128.6pt, height=252.2pt]{cover_figures/img_7.png}};
+  \node[anchor=south east, inner sep=0pt] at (current page.south east) {\includegraphics[width=129.6pt, height=253pt]{cover_figures/img_12.png}};
+
+  \node[anchor=center, align=center] at ($(TL)+(297.5pt,-79.25pt)$) {\fontsize{15}{18}\selectfont TRƯỜNG ĐẠI HỌC CÔNG NGHỆ THÔNG TIN\,–\,ĐHQG HCM};
+  \node[anchor=center, align=center] at ($(TL)+(297.5pt,-103.25pt)$) {\fontsize{15}{18}\selectfont TRUNG TÂM PHÁT TRIỂN CÔNG NGHỆ THÔNG TIN};
+  \node[anchor=center, align=center] at ($(TL)+(297.5pt,-127.25pt)$) {\fontsize{15}{18}\selectfont Lớp: CS106.F31.CN2.TTNT};
+
+  \node[anchor=center, align=center] at ($(TL)+(297.5pt,-253.3pt)$) {\fontsize{22}{22}\selectfont\bfseries\color{titleblue} ĐỒ ÁN CUỐI KỲ};
+  \node[anchor=center, align=center] at ($(TL)+(297.5pt,-290.75pt)$) {\fontsize{22}{22}\selectfont\bfseries MÔN: TRÍ TUỆ NHÂN TẠO};
+  \node[anchor=center, align=center, text width=580pt] at ($(TL)+(297.5pt,-375.75pt)$) {\fontsize{25}{32}\selectfont\bfseries HỆ THỐNG PHÁT HIỆN GIAO DỊCH TÀI CHÍNH BẤT THƯỜNG VÀ NGHI VẤN GIAN LẬN};
+
+
+  \node[anchor=center, align=center] at ($(TL)+(297.5pt,-501.75pt)$) {\fontsize{16}{19}\selectfont\textbf{GVHD:}\hspace{3pt} Nguyễn Đình Hiển};
+  \node[anchor=center, align=center] at ($(TL)+(297.5pt,-530.45pt)$) {\fontsize{16}{19}\selectfont\textbf{Nhóm:}\hspace{4pt} 5};
+
+  \node[anchor=center] at ($(TL)+(207pt,-559.2pt)$) {\fontsize{16}{19}\selectfont\bfseries Tên sinh viên};
+  \node[anchor=center] at ($(TL)+(360pt,-559.2pt)$) {\fontsize{16}{19}\selectfont\bfseries MSSV};
+
+  \draw[line width=0.5pt, black] ($(TL)+(150pt,-572.6pt)$) -- ($(TL)+(410pt,-572.6pt)$);
+  \draw[line width=0.5pt, black] ($(TL)+(150pt,-593.9pt)$) -- ($(TL)+(410pt,-593.9pt)$);
+  \draw[line width=0.5pt, black] ($(TL)+(150pt,-615.1pt)$) -- ($(TL)+(410pt,-615.1pt)$);
+  \draw[line width=0.5pt, black] ($(TL)+(150pt,-636.4pt)$) -- ($(TL)+(410pt,-636.4pt)$);
+  \draw[line width=0.5pt, black] ($(TL)+(150pt,-657.6pt)$) -- ($(TL)+(410pt,-657.6pt)$);
+  \draw[line width=0.5pt, black] ($(TL)+(329pt,-552.5pt)$) -- ($(TL)+(329pt,-682pt)$);
+
+  \node[anchor=west] at ($(TL)+(154pt,-585pt)$) {\fontsize{16}{19}\selectfont Ngô Thị Vân Giang};
+  \node[anchor=west] at ($(TL)+(334.8pt,-585pt)$) {\fontsize{16}{19}\selectfont 25730020};
+  \node[anchor=west] at ($(TL)+(154pt,-605pt)$) {\fontsize{16}{19}\selectfont Lê Vân Anh};
+  \node[anchor=west] at ($(TL)+(334.8pt,-605pt)$) {\fontsize{16}{19}\selectfont 25730008};
+  \node[anchor=west] at ($(TL)+(154pt,-627pt)$) {\fontsize{16}{19}\selectfont Bùi Thi Hoàng};
+  \node[anchor=west] at ($(TL)+(334.8pt,-627pt)$) {\fontsize{16}{19}\selectfont 25730029};
+  \node[anchor=west] at ($(TL)+(154pt,-650pt)$) {\fontsize{16}{19}\selectfont Huỳnh Trường An};
+  \node[anchor=west] at ($(TL)+(334.8pt,-650pt)$) {\fontsize{16}{19}\selectfont 25730004};
+  \node[anchor=west] at ($(TL)+(154pt,-673pt)$) {\fontsize{16}{19}\selectfont Trương Nam Anh};
+  \node[anchor=west] at ($(TL)+(334.8pt,-673pt)$) {\fontsize{16}{19}\selectfont 25730010};
+\end{tikzpicture}
+\end{document}

@@ -1,0 +1,200 @@
+\documentclass[14pt, a4paper]{report}
+\usepackage{fontspec}            % Must use XeLaTeX
+\usepackage{amsmath}
+% Toàn tài liệu chỉ dùng Times New Roman. Ký hiệu toán học dùng TeX Gyre Termes
+% Math - bộ font toán được thiết kế tương thích với Times New Roman.
+\setmainfont{Times New Roman}
+\setsansfont{Times New Roman}
+\setmonofont{Times New Roman}
+
+\usepackage{unicode-math}
+\setmathfont[Path=/usr/share/texmf-dist/fonts/opentype/public/tex-gyre-math/]{texgyretermes-math.otf}
+\usepackage{fancyhdr}
+\usepackage{tikzlings}
+\usepackage{sectsty} % For coloring section headings
+\usepackage{pdfpages}
+\usepackage{epstopdf}
+\usepackage{graphicx}
+\usepackage{pifont}
+\usepackage{booktabs}
+\usepackage[
+backend=biber,
+style=numeric,
+sorting=none
+]{biblatex}
+
+\addbibresource{references.bib}
+\usepackage{placeins}
+\setlength{\parskip}{10pt}
+\usepackage{float}
+\usepackage{multirow}
+\usepackage{tabularx}
+\usepackage{adjustbox}
+\usepackage{listings}
+\usepackage{xcolor}
+\usepackage{algorithm}
+\usepackage[noend]{algpseudocode}
+\usepackage{siunitx}
+\usepackage{subcaption}
+\usepackage{indentfirst}
+\setlength{\parindent}{1cm}
+\setlength{\parskip}{0pt}
+\setlength{\emergencystretch}{3em}
+\usepackage[most]{tcolorbox}
+\usepackage{enumerate}
+\usepackage{tikz}
+\tikzset{set/.style={draw,circle,inner sep=0pt,align=center}}
+\usepackage{wasysym}
+\usepackage{enumitem}
+\usepackage{ragged2e}
+\usepackage{etoolbox}
+
+\usepackage[tikz]{bclogo}
+\usepackage{longfbox}
+\usepackage{pgfplots}
+\usepackage{footnote}
+\usepackage{fancyhdr}
+\usepackage{babel}
+\babelprovide[import, main]{vietnamese}
+\usepackage[colorlinks=true, linkcolor=black, citecolor=black, urlcolor=blue]{hyperref}
+\usepackage{setspace}
+\usetikzlibrary {positioning,graphs,calc,decorations.pathmorphing,shapes,arrows.meta,arrows,shapes.misc,fit,patterns}
+\usepgfplotslibrary{fillbetween}
+\pgfplotsset{compat=1.9}
+\usepackage[explicit]{titlesec}
+\usepackage{lipsum}
+
+% Define your colors
+\definecolor{titlebgdark}{RGB}{0,163,243}
+\definecolor{chapnumberbg}{RGB}{1,84,164}
+\definecolor{chapname}{RGB}{1,84,164}
+
+\rhead{\color{gray}\textbf{ \leftmark}}
+\lhead{\color{chapname}\textbf{Nhóm 5 - CS106 - Trí tuệ nhân tạo}}
+
+\usepackage{tikzpagenodes}
+\usepackage[top=2.5cm, bottom=2.5cm, left=3cm, right=2cm]{geometry}
+\usepackage{longtable}
+\usepackage{tabularx}
+\usepackage{array}
+\usepackage{pdfpages}
+\usetikzlibrary{fit}
+\urlstyle{same}
+
+% Apply color to section and subsection headings
+\sectionfont{\color{chapname}\normalfont\bfseries\large}
+\subsectionfont{\color{chapname}\normalfont\bfseries\large}
+
+\titleformat{\chapter}[display]
+{\Large}
+{}
+{0pt}
+{%
+    \begin{tikzpicture}
+        \node[
+        draw=chapname,
+        rounded corners,
+        outer sep=0pt,
+        inner sep=6pt,
+        rotate=90,
+        line width=1pt,
+        font=\Large\color{chapnumberbg}\bfseries
+        ]
+        (chapname)
+        {\chaptertitlename};
+        \node[
+        fill=chapnumberbg,
+        minimum width=2cm,
+        minimum height=2.3cm,
+        rounded corners,
+        anchor=west,
+        font=\color{white}\fontsize{40}{48}\selectfont\bfseries
+        ]
+        at ([xshift=6pt]chapname.south)
+        (chapnumber)
+        {\thechapter};
+        \node[
+        anchor=west,
+        text width=\textwidth-4cm,
+        font=\bfseries\LARGE
+        ]
+        at ([xshift=10pt]chapnumber.east)
+        {#1};
+        \fill[
+        overlay,
+        draw=none,
+        line width=0pt,
+        rounded corners=1pt,
+        left color=chapnumberbg,
+        right color=chapnumberbg!10
+        ]
+        ([yshift=-3pt]chapname.north west) rectangle ++(\textwidth,-3pt);
+    \end{tikzpicture}%
+}
+\titleformat{name=\chapter,numberless}[display]
+{\normalfont}
+{}
+{0pt}
+{%
+    \begin{tikzpicture}
+        \node[
+        anchor=west,
+        inner sep=0pt,
+        outer sep=0pt,
+        text width=\textwidth,
+        font=\bfseries\LARGE
+        ]
+        (chaptitle)
+        {#1};
+        \fill[
+        overlay,
+        draw=none,
+        line width=0pt,
+        rounded corners=1pt,
+        left color=chapnumberbg,
+        right color=chapnumberbg!10
+        ]
+        ([yshift=-3pt]chaptitle.south west) rectangle ++(\textwidth,-3pt);
+    \end{tikzpicture}%
+}
+\titlespacing{\chapter}{0pt}{-40pt}{1cm}
+
+\begin{document}
+\begin{spacing}{1.5}
+\pagestyle{fancy}
+\includepdf[]{cover.pdf}
+\setcounter{tocdepth}{1}
+\large
+
+\thispagestyle{empty}
+\begin{justify}
+
+\tableofcontents
+\thispagestyle{empty}
+\clearpage
+
+\chapter{GIỚI THIỆU}
+\setcounter{page}{1}
+\input{content/gioi_thieu}
+
+\chapter{PHƯƠNG PHÁP THU THẬP VÀ TIỀN XỬ LÝ DỮ LIỆU}
+\input{content/thu_thap_du_lieu}
+
+\chapter{PHÂN TÍCH KHÁM PHÁ DỮ LIỆU}
+\input{content/eda}
+
+\chapter{XÂY DỰNG CÁC MÔ HÌNH HỌC MÁY}
+\input{content/mo_hinh}
+
+\chapter{ĐÁNH GIÁ VÀ THẢO LUẬN KẾT QUẢ}
+\input{content/danh_gia}
+
+\chapter{KẾT LUẬN}
+\input{content/ket_luan}
+
+\end{justify}
+\end{spacing}
+
+\printbibliography
+
+\end{document}
