@@ -11,7 +11,7 @@ Hình \ref{fig:distributions} mô tả phân bố của ba đặc trưng số ch
 \end{figure}
 
 \section{Gian lận theo loại hình dịch vụ}
-Hình \ref{fig:fraud_category} thể hiện tỷ lệ gian lận của 10 loại hình dịch vụ có rủi ro cao nhất. Ba nhóm đầu là \texttt{shopping\_net}, \texttt{misc\_net} và \texttt{grocery\_pos} chiếm 82 trong tổng số 133 vụ gian lận, tương ứng 61{,}7\%. Loại \texttt{shopping\_net} có tỷ lệ gian lận cao nhất với 33 trong 2\,302 giao dịch, tương ứng 1{,}43\%, trong khi nhóm an toàn nhất \texttt{personal\_care} chỉ có 4 trong 2\,220 giao dịch, tương ứng 0{,}18\%. Kết quả kiểm định Chi-square cho giá trị $p = 1{,}28 \times 10^{-23}$, khẳng định loại hình dịch vụ có liên quan có ý nghĩa thống kê với gian lận, do đó \texttt{category} được giữ lại làm đặc trưng cho mô hình.
+Hình \ref{fig:fraud_category} thể hiện tỷ lệ gian lận của 10 loại hình dịch vụ có rủi ro cao nhất. Ba nhóm đầu là \texttt{shopping\_net}, \texttt{misc\_net} và \texttt{grocery\_pos} chiếm 82 trong tổng số 133 vụ gian lận, tương ứng 61{.}7\%. Loại \texttt{shopping\_net} có tỷ lệ gian lận cao nhất với 33 trong 2\,302 giao dịch, tương ứng 1{.}43\%, trong khi nhóm an toàn nhất \texttt{personal\_care} chỉ có 4 trong 2\,220 giao dịch, tương ứng 0{.}18\%. Kết quả kiểm định Chi-square cho giá trị $p = 1{.}28 \times 10^{-23}$, khẳng định loại hình dịch vụ có liên quan có ý nghĩa thống kê với gian lận, do đó \texttt{category} được giữ lại làm đặc trưng cho mô hình.
 
 \begin{figure}[H]
     \centering
@@ -21,7 +21,7 @@ Hình \ref{fig:fraud_category} thể hiện tỷ lệ gian lận của 10 loại
 \end{figure}
 
 \section{Giá trị bất thường}
-Hình \ref{fig:outlier} dùng biểu đồ hộp để khảo sát giá trị bất thường của các đặc trưng số, và Bảng \ref{tab:outlier} thống kê chi tiết theo quy tắc $1{,}5 \times \text{IQR}$.
+Hình \ref{fig:outlier} dùng biểu đồ hộp để khảo sát giá trị bất thường của các đặc trưng số, và Bảng \ref{tab:outlier} thống kê chi tiết theo quy tắc $1{.}5 \times \text{IQR}$.
 
 \begin{figure}[H]
     \centering
@@ -39,18 +39,18 @@ Hình \ref{fig:outlier} dùng biểu đồ hộp để khảo sát giá trị b�
 \hline
 \textbf{Đặc trưng} & \textbf{Ngưỡng trên} & \textbf{Số giá trị bất thường (tỷ lệ)} & \textbf{Gian lận trong vùng bất thường} \\
 \hline
-amt & 192{,}16 & 1\,521 (5{,}06\%) & 104 (78{,}2\%) \\
+amt & 192{.}16 & 1\,521 (5{.}06\%) & 104 (78{.}2\%) \\
 \hline
-txn\_freq\_hour & 7{,}00 & 887 (2{,}95\%) & 5 \\
+txn\_freq\_hour & 7{.}00 & 887 (2{.}95\%) & 5 \\
 \hline
-distance\_km & 162{,}10 & 0 (0\%) & 0 \\
+distance\_km & 162{.}10 & 0 (0\%) & 0 \\
 \hline
 \end{tabularx}
 \caption{Thống kê giá trị bất thường theo quy tắc IQR}
 \label{tab:outlier}
 \end{table}
 
-Đáng chú ý, 78{,}2\% số giao dịch gian lận nằm trong vùng giá trị bất thường của cột \texttt{amt}. Vì vậy, đồ án không xóa bỏ các giá trị bất thường ngay ở bước này mà chỉ giới hạn chúng theo quy tắc IQR sau khi chia tập huấn luyện và tập kiểm tra, nhằm tránh làm mất đi chính những giao dịch gian lận.
+Đáng chú ý, 78{.}2\% số giao dịch gian lận nằm trong vùng giá trị bất thường của cột \texttt{amt}. Vì vậy, đồ án không xóa bỏ các giá trị bất thường ngay ở bước này mà chỉ giới hạn chúng theo quy tắc IQR sau khi chia tập huấn luyện và tập kiểm tra, nhằm tránh làm mất đi chính những giao dịch gian lận.
 
 
 
@@ -63,7 +63,7 @@ distance\_km & 162{,}10 & 0 (0\%) & 0 \\
 	\label{fig:scatter_features}
 \end{figure}
 
-Hình \ref{fig:scatter_features} trình bày quan hệ cặp giữa ba đặc trưng hành vi gồm số lần giao dịch gần đây \texttt{txn\_count\_recent}, tốc độ di chuyển \texttt{speed\_kmh} và tỷ lệ số tiền so với trung bình thẻ \texttt{amt\_vs\_card\_avg}, tô màu theo nhãn gian lận. Giao dịch gian lận có tốc độ di chuyển và tỷ lệ số tiền so với trung bình thẻ cao hơn rõ rệt: trung vị \texttt{speed\_kmh} là 59{,}4 km/h so với 21{,}2 km/h của giao dịch hợp lệ, trung vị \texttt{amt\_vs\_card\_avg} là 1{,}94 so với 0{,}67, cho thấy gian lận thường phát sinh ở nơi xa nơi ở quen thuộc và với số tiền vượt trung bình chi tiêu của thẻ. Ngược lại, \texttt{txn\_count\_recent} gần như không phân biệt hai lớp (trung vị 20 so với 19), nên chủ yếu đóng vai trò đặc trưng bổ trợ.
+Hình \ref{fig:scatter_features} trình bày quan hệ cặp giữa ba đặc trưng hành vi gồm số lần giao dịch gần đây \texttt{txn\_count\_recent}, tốc độ di chuyển \texttt{speed\_kmh} và tỷ lệ số tiền so với trung bình thẻ \texttt{amt\_vs\_card\_avg}, tô màu theo nhãn gian lận. Giao dịch gian lận có tốc độ di chuyển và tỷ lệ số tiền so với trung bình thẻ cao hơn rõ rệt: trung vị \texttt{speed\_kmh} là 59{.}4 km/h so với 21{.}2 km/h của giao dịch hợp lệ, trung vị \texttt{amt\_vs\_card\_avg} là 1{.}94 so với 0{.}67, cho thấy gian lận thường phát sinh ở nơi xa nơi ở quen thuộc và với số tiền vượt trung bình chi tiêu của thẻ. Ngược lại, \texttt{txn\_count\_recent} gần như không phân biệt hai lớp (trung vị 20 so với 19), nên chủ yếu đóng vai trò đặc trưng bổ trợ.
 
 
 

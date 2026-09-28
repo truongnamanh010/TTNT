@@ -6,7 +6,7 @@ Bộ dữ liệu được sử dụng trong đồ án là tập dữ liệu giao
 
 
 \section{Mô tả bộ dữ liệu}
-Bộ dữ liệu mô tả hoạt động giao dịch của 909 thẻ tín dụng tại 693 điểm chấp nhận thanh toán thuộc 50 bang của Hoa Kỳ, trong khoảng thời gian 10 ngày, từ ngày 21/06 đến ngày 30/06/2020. Mỗi bản ghi tương ứng với một giao dịch. Số tiền giao dịch dao động từ 1\,USD đến 6\,600{,}44\,USD, với trung vị 46{,}28\,USD. Bảng \ref{tab:data_fields} liệt kê chi tiết các cột quan trọng của bộ dữ liệu.
+Bộ dữ liệu mô tả hoạt động giao dịch của 909 thẻ tín dụng tại 693 điểm chấp nhận thanh toán thuộc 50 bang của Hoa Kỳ, trong khoảng thời gian 10 ngày, từ ngày 21/06 đến ngày 30/06/2020. Mỗi bản ghi tương ứng với một giao dịch. Số tiền giao dịch dao động từ 1\,USD đến 6\,600{.}44\,USD, với trung vị 46{.}28\,USD. Bảng \ref{tab:data_fields} liệt kê chi tiết các cột quan trọng của bộ dữ liệu.
 
 \begin{table}[H]
 \centering
@@ -48,13 +48,13 @@ is\_fraud & int & Nhãn: 0 = hợp lệ, 1 = gian lận \\
 \label{tab:data_fields}
 \end{table}
 
-Phân bố nhãn của bộ dữ liệu cho thấy tính mất cân bằng nghiêm trọng: có 29\,925 giao dịch hợp lệ nhưng chỉ có 133 giao dịch gian lận, tương ứng tỷ lệ gian lận 0{,}44\%. Lớp lớn gấp 225 lần lớp nhỏ. Vì vậy, Accuracy không phản ánh đúng khả năng phát hiện gian lận của mô hình và không được dùng làm tiêu chí đánh giá chính trong đồ án.
+Phân bố nhãn của bộ dữ liệu cho thấy tính mất cân bằng nghiêm trọng: có 29\,925 giao dịch hợp lệ nhưng chỉ có 133 giao dịch gian lận, tương ứng tỷ lệ gian lận 0{.}44\%. Lớp lớn gấp 225 lần lớp nhỏ. Vì vậy, Accuracy không phản ánh đúng khả năng phát hiện gian lận của mô hình và không được dùng làm tiêu chí đánh giá chính trong đồ án.
 
 \section{Tiền xử lý dữ liệu}
 \subsection{Làm sạch dữ liệu}
 Các cột số như \texttt{amt}, \texttt{lat}, \texttt{long}, \texttt{merch\_lat}, \texttt{merch\_long} có thể chứa ký tự hoặc dấu phân cách không mong muốn, được chuẩn hóa về dạng số thực bằng hàm \texttt{convert\_to\_number}. Cột \texttt{trans\_date\_trans\_time} được chuyển sang kiểu \texttt{datetime} để có thể trích xuất giờ giao dịch. Kiểm tra cho thấy bộ dữ liệu không có dòng trùng lặp hoàn toàn và không có dòng thiếu các cột bắt buộc gồm \texttt{lat}, \texttt{long}, \texttt{amt}, \texttt{trans\_date\_trans\_time}, \texttt{cc\_num}, \texttt{category} và \texttt{is\_fraud}; toàn bộ 30\,058 giao dịch được giữ lại cho các bước phân tích tiếp theo.
 
-Quá trình kiểm tra dữ liệu nguồn phát hiện ba lỗi phát sinh khi bộ dữ liệu được nhập vào Google Sheets, được khôi phục trước khi phân tích: (1) các cột tọa độ \texttt{lat}, \texttt{long}, \texttt{merch\_lat}, \texttt{merch\_long} bị mất dấu chấm thập phân (ví dụ \texttt{33{,}9659} bị nhập thành \texttt{339.659}), được khôi phục bằng cách tách toàn bộ chữ số rồi dịch dấu thập phân về bậc sao cho giá trị rơi vào khoảng hợp lệ của vĩ độ (15--75) và kinh độ (66--180); (2) cột mã thẻ \texttt{cc\_num} bị làm tròn về ba chữ số có nghĩa nên chỉ còn 309 mã khác nhau, được thay bằng định danh thẻ ổn định suy ra từ định danh chủ thẻ (họ, tên, địa chỉ, thành phố, bang, nghề nghiệp, ngày sinh), thu được 909 thẻ; (3) cột \texttt{unix\_time} bị ghi đè toàn bộ bằng cùng một hằng số, được tính lại từ cột \texttt{trans\_date\_trans\_time}.
+Quá trình kiểm tra dữ liệu nguồn phát hiện ba lỗi phát sinh khi bộ dữ liệu được nhập vào Google Sheets, được khôi phục trước khi phân tích: (1) các cột tọa độ \texttt{lat}, \texttt{long}, \texttt{merch\_lat}, \texttt{merch\_long} bị mất dấu chấm thập phân (ví dụ \texttt{33{.}9659} bị nhập thành \texttt{339.659}), được khôi phục bằng cách tách toàn bộ chữ số rồi dịch dấu thập phân về bậc sao cho giá trị rơi vào khoảng hợp lệ của vĩ độ (15--75) và kinh độ (66--180); (2) cột mã thẻ \texttt{cc\_num} bị làm tròn về ba chữ số có nghĩa nên chỉ còn 309 mã khác nhau, được thay bằng định danh thẻ ổn định suy ra từ định danh chủ thẻ (họ, tên, địa chỉ, thành phố, bang, nghề nghiệp, ngày sinh), thu được 909 thẻ; (3) cột \texttt{unix\_time} bị ghi đè toàn bộ bằng cùng một hằng số, được tính lại từ cột \texttt{trans\_date\_trans\_time}.
 
 \subsection{Tạo đặc trưng}
 Từ dữ liệu thô, một số đặc trưng hành vi được tạo thêm để phục vụ mô hình hóa, minh họa trong Hình \ref{fig:code_features}. Danh sách 14 đặc trưng đầu vào gồm:

@@ -33,7 +33,7 @@ Dữ liệu của đề tài có tỷ lệ mất cân bằng trên tập Fit là
 \hline
 Trọng số lớp & Random Forest & \texttt{class\_weight = "balanced"} hoặc trọng số thủ công $\{0{:}1,\ 1{:}k\}$ với $k \in \{20, 40, 60, 100, 150, 225\}$ \\
 \hline
-Trọng số lớp thiểu số & XGBoost, LightGBM & \texttt{scale\_pos\_weight} đặt quanh tỷ lệ mất cân bằng, gồm các mức 0{,}10; 0{,}25; 0{,}50; 0{,}75 và 1{,}0 lần tỷ lệ 225 \\
+Trọng số lớp thiểu số & XGBoost, LightGBM & \texttt{scale\_pos\_weight} đặt quanh tỷ lệ mất cân bằng, gồm các mức 0{.}10; 0{.}25; 0{.}50; 0{.}75 và 1{.}0 lần tỷ lệ 225 \\
 \hline
 SMOTE nhẹ \cite{chawla2002smote} & XGBoost & Sinh thêm mẫu tổng hợp cho lớp gian lận với tỷ lệ thiểu số/đa số chỉ từ 2\% đến 5\%, thay vì cân bằng hoàn toàn \\
 \hline
@@ -47,7 +47,7 @@ Trọng số tự động cân bằng & CatBoost & \texttt{auto\_class\_weights 
 Chiến lược SMOTE được đặt trong một \texttt{Pipeline} nhằm bảo đảm việc sinh dữ liệu tổng hợp chỉ diễn ra bên trong từng fold cross-validation, không làm rò rỉ thông tin vào tập xác thực.
 
 \section{Lựa chọn ngưỡng quyết định}
-Mô hình học máy trả về xác suất gian lận cho mỗi giao dịch. Thay vì dùng ngầm định ngưỡng 0{,}5, đồ án chọn ngưỡng tối ưu riêng cho từng mô hình trên tập Validation theo tiêu chí F2-Score cao nhất, đồng thời yêu cầu Precision tối thiểu 0{,}6 trên tập Validation để tránh cảnh báo tràn lan. Ràng buộc này được kiểm tra khi duyệt các ngưỡng ứng viên, nên ngưỡng cuối cùng chỉ được chọn trong vùng mà độ chính xác đã đủ cao; nếu một mô hình không đạt được ngưỡng này thì vẫn lấy ngưỡng có F2-Score cao nhất trong số các ngưỡng ứng viên. Cách tiếp cận này giúp ngưỡng được chọn độc lập với tập kiểm tra, và việc chỉ đánh giá một lần duy nhất trên tập kiểm tra giữ cho kết quả cuối cùng không bị lạc quan.
+Mô hình học máy trả về xác suất gian lận cho mỗi giao dịch. Thay vì dùng ngầm định ngưỡng 0{.}5, đồ án chọn ngưỡng tối ưu riêng cho từng mô hình trên tập Validation theo tiêu chí F2-Score cao nhất, đồng thời yêu cầu Precision tối thiểu 0{.}6 trên tập Validation để tránh cảnh báo tràn lan. Ràng buộc này được kiểm tra khi duyệt các ngưỡng ứng viên, nên ngưỡng cuối cùng chỉ được chọn trong vùng mà độ chính xác đã đủ cao; nếu một mô hình không đạt được ngưỡng này thì vẫn lấy ngưỡng có F2-Score cao nhất trong số các ngưỡng ứng viên. Cách tiếp cận này giúp ngưỡng được chọn độc lập với tập kiểm tra, và việc chỉ đánh giá một lần duy nhất trên tập kiểm tra giữ cho kết quả cuối cùng không bị lạc quan.
 
 \section{Mô hình Random Forest}
 Random Forest \cite{breiman2001randomforest} xây dựng nhiều cây quyết định trên các mẫu bootstrap khác nhau và lấy biểu quyết từ các cây, giúp giảm phương sai và ít bị ảnh hưởng bởi nhiễu. Không gian siêu tham số được khảo sát được trình bày trong Bảng \ref{tab:rf_params}. Điều chỉnh trọng số lớp kết hợp với giới hạn độ sâu giúp các cây tập trung hơn vào lớp thiểu số mà không quá khớp nhiễu.
@@ -67,7 +67,7 @@ Random Forest \cite{breiman2001randomforest} xây dựng nhiều cây quyết đ
 \hline
 \texttt{min\_samples\_split}, \texttt{min\_samples\_leaf} & ràng buộc kích thước nút và lá \\
 \hline
-\texttt{max\_features} & "sqrt", "log2", 0{,}3, 0{,}5, 0{,}7, 1{,}0 \\
+\texttt{max\_features} & "sqrt", "log2", 0{.}3, 0{.}5, 0{.}7, 1{.}0 \\
 \hline
 \texttt{criterion} & "gini", "entropy", "log\_loss" \\
 \hline
@@ -94,9 +94,9 @@ XGBoost \cite{chen2016xgboost} là thuật toán gradient boosting xây dựng c
 \hline
 \texttt{max\_depth} & độ sâu tối đa, từ 2 đến 10 \\
 \hline
-\texttt{learning\_rate} & tốc độ học, từ 0{,}005 đến 0{,}15 \\
+\texttt{learning\_rate} & tốc độ học, từ 0{.}005 đến 0{.}15 \\
 \hline
-\texttt{subsample}, \texttt{colsample\_bytree} & tỷ lệ mẫu và đặc trưng dùng cho mỗi cây, từ 0{,}55 đến 1{,}00 \\
+\texttt{subsample}, \texttt{colsample\_bytree} & tỷ lệ mẫu và đặc trưng dùng cho mỗi cây, từ 0{.}55 đến 1{.}00 \\
 \hline
 \texttt{min\_child\_weight} & trọng số tối thiểu của nút con, từ 1 đến 20 \\
 \hline
@@ -104,7 +104,7 @@ XGBoost \cite{chen2016xgboost} là thuật toán gradient boosting xây dựng c
 \hline
 \texttt{reg\_alpha}, \texttt{reg\_lambda} & hệ số chính quy hóa L1 và L2 \\
 \hline
-\texttt{scale\_pos\_weight} & trọng số lớp gian lận: 1; $\sqrt{225}$; 0{,}10; 0{,}25; 0{,}50; 0{,}75; 1{,}00 lần tỷ lệ mất cân bằng \\
+\texttt{scale\_pos\_weight} & trọng số lớp gian lận: 1; $\sqrt{225}$; 0{.}10; 0{.}25; 0{.}50; 0{.}75; 1{.}00 lần tỷ lệ mất cân bằng \\
 \hline
 \end{tabularx}
 \caption{Không gian siêu tham số của XGBoost}
@@ -129,15 +129,15 @@ LightGBM \cite{ke2017lightgbm} là thuật toán gradient boosting dùng bộ ph
 \hline
 \texttt{num\_leaves} & số lá trên mỗi cây, từ 15 đến 64 \\
 \hline
-\texttt{learning\_rate} & tốc độ học, từ 0{,}005 đến 0{,}15 \\
+\texttt{learning\_rate} & tốc độ học, từ 0{.}005 đến 0{.}15 \\
 \hline
 \texttt{min\_child\_samples} & số mẫu tối thiểu của một nút lá, từ 5 đến 50 \\
 \hline
-\texttt{subsample}, \texttt{colsample\_bytree} & tỷ lệ mẫu và đặc trưng dùng cho mỗi cây, từ 0{,}55 đến 1{,}00 \\
+\texttt{subsample}, \texttt{colsample\_bytree} & tỷ lệ mẫu và đặc trưng dùng cho mỗi cây, từ 0{.}55 đến 1{.}00 \\
 \hline
 \texttt{reg\_alpha}, \texttt{reg\_lambda} & hệ số chính quy hóa L1 và L2 \\
 \hline
-\texttt{scale\_pos\_weight} & trọng số lớp gian lận: 1; $\sqrt{225}$; 0{,}25; 0{,}50; 0{,}75; 1{,}00 lần tỷ lệ mất cân bằng \\
+\texttt{scale\_pos\_weight} & trọng số lớp gian lận: 1; $\sqrt{225}$; 0{.}25; 0{.}50; 0{.}75; 1{.}00 lần tỷ lệ mất cân bằng \\
 \hline
 \end{tabularx}
 \caption{Không gian siêu tham số của LightGBM}
@@ -145,7 +145,7 @@ LightGBM \cite{ke2017lightgbm} là thuật toán gradient boosting dùng bộ ph
 \end{table}
 
 \subsection{Cấu hình tối ưu của LightGBM}
-Sau khi \texttt{RandomizedSearchCV} với 60 lần thử trên cross-validation 5-fold, LightGBM đạt điểm PR-AUC cross-validation cao nhất là 0{,}8525, vượt trội so với bốn cấu hình còn lại. Bộ siêu tham số tương ứng được trình bày ở Bảng \ref{tab:lgbm_best}. Cấu hình này dùng \texttt{scale\_pos\_weight} bằng 15{,}01, tức nhẹ hơn đáng kể so với tỷ lệ mất cân bằng đầy đủ là 225{,}31, cho thấy việc tăng trọng số lớp thiểu số vừa đủ giúp mô hình tập trung vào lớp gian lận mà không làm méo quá mức phân phối xác suất. Số cây 1\,483 đi kèm tốc độ học thấp 0{,}0314 là một cấu hình hội tụ chậm, vốn là lựa chọn phổ biến cho bài toán dữ liệu nhỏ và mất cân bằng.
+Sau khi \texttt{RandomizedSearchCV} với 60 lần thử trên cross-validation 5-fold, LightGBM đạt điểm PR-AUC cross-validation cao nhất là 0{.}8525, vượt trội so với bốn cấu hình còn lại. Bộ siêu tham số tương ứng được trình bày ở Bảng \ref{tab:lgbm_best}. Cấu hình này dùng \texttt{scale\_pos\_weight} bằng 15{.}01, tức nhẹ hơn đáng kể so với tỷ lệ mất cân bằng đầy đủ là 225{.}31, cho thấy việc tăng trọng số lớp thiểu số vừa đủ giúp mô hình tập trung vào lớp gian lận mà không làm méo quá mức phân phối xác suất. Số cây 1\,483 đi kèm tốc độ học thấp 0{.}0314 là một cấu hình hội tụ chậm, vốn là lựa chọn phổ biến cho bài toán dữ liệu nhỏ và mất cân bằng.
 
 \begin{table}[H]
 \centering
@@ -158,7 +158,7 @@ Sau khi \texttt{RandomizedSearchCV} với 60 lần thử trên cross-validation 
 \hline
 \texttt{n\_estimators} & 1\,483 \\
 \hline
-\texttt{learning\_rate} & 0{,}0314 \\
+\texttt{learning\_rate} & 0{.}0314 \\
 \hline
 \texttt{num\_leaves} & 21 \\
 \hline
@@ -166,22 +166,22 @@ Sau khi \texttt{RandomizedSearchCV} với 60 lần thử trên cross-validation 
 \hline
 \texttt{min\_child\_samples} & 17 \\
 \hline
-\texttt{subsample} & 0{,}8310 \\
+\texttt{subsample} & 0{.}8310 \\
 \hline
-\texttt{colsample\_bytree} & 0{,}8220 \\
+\texttt{colsample\_bytree} & 0{.}8220 \\
 \hline
-\texttt{reg\_alpha} & 0{,}00281 \\
+\texttt{reg\_alpha} & 0{.}00281 \\
 \hline
-\texttt{reg\_lambda} & 0{,}13136 \\
+\texttt{reg\_lambda} & 0{.}13136 \\
 \hline
-\texttt{scale\_pos\_weight} & 15{,}01 \\
+\texttt{scale\_pos\_weight} & 15{.}01 \\
 \hline
 \end{tabular}
 \caption{Bộ siêu tham số tối ưu của LightGBM theo \texttt{RandomizedSearchCV}}
 \label{tab:lgbm_best}
 \end{table}
 
-Với cấu hình này, chênh lệch giữa điểm PR-AUC cross-validation trên tập Fit là 0{,}8525 và điểm PR-AUC trên tập kiểm tra là 0{,}8197 ở mức 0{,}0328, cho thấy mức độ quá khớp ở mức chấp nhận được và không cần dựng thêm biến thể giảm quá khớp. Kết quả chi tiết của cấu hình này trên tập kiểm tra được trình bày ở Bảng \ref{tab:exp3} của chương đánh giá.
+Với cấu hình này, chênh lệch giữa điểm PR-AUC cross-validation trên tập Fit là 0{.}8525 và điểm PR-AUC trên tập kiểm tra là 0{.}8197 ở mức 0{.}0328, cho thấy mức độ quá khớp ở mức chấp nhận được và không cần dựng thêm biến thể giảm quá khớp. Kết quả chi tiết của cấu hình này trên tập kiểm tra được trình bày ở Bảng \ref{tab:exp3} của chương đánh giá.
 
 \section{Mô hình CatBoost}
 CatBoost \cite{prokhorenkova2018catboost} là thuật toán gradient boosting xử lý đặc trưng phân loại bên trong cây, dùng trọng số tự động cân bằng lớp \texttt{auto\_class\_weights = "Balanced"} để đối phó với dữ liệu mất cân bằng mà không cần điều chỉnh thủ công. Không gian siêu tham số được khảo sát được trình bày trong Bảng \ref{tab:cat_params}.
@@ -199,9 +199,9 @@ CatBoost \cite{prokhorenkova2018catboost} là thuật toán gradient boosting x�
 \hline
 \texttt{depth} & độ sâu tối đa, từ 4 đến 10 \\
 \hline
-\texttt{learning\_rate} & tốc độ học, từ 0{,}005 đến 0{,}15 \\
+\texttt{learning\_rate} & tốc độ học, từ 0{.}005 đến 0{.}15 \\
 \hline
-\texttt{l2\_leaf\_reg} & hệ số chính quy hóa L2, từ 0{,}1 đến 10 \\
+\texttt{l2\_leaf\_reg} & hệ số chính quy hóa L2, từ 0{.}1 đến 10 \\
 \hline
 \texttt{bagging\_temperature}, \texttt{random\_strength} & mức ngẫu nhiên khi lấy mẫu và khi chọn ranh giới phân hoạch \\
 \hline
@@ -218,7 +218,7 @@ CatBoost \cite{prokhorenkova2018catboost} là thuật toán gradient boosting x�
 Sau khi tinh chỉnh, ba cấu hình có điểm F2-Score trên tập Validation cao nhất được chọn làm mô hình cơ sở (base learners), gồm XGBoost--trọng số, LightGBM và CatBoost. Các mô hình cơ sở được kết hợp bằng \texttt{StackingClassifier} \cite{wolpert1992stacked}: mỗi mô hình cơ sở sinh xác suất gian lận trên các fold cross-validation 3 lớp, xác suất này được đưa vào bộ tổng hợp (meta-learner) là một hồi quy Logistic có trọng số lớp cân bằng để học cách kết hợp các mô hình sao cho F2-Score cao nhất. Bước kết hợp này giúp mô hình tận dụng điểm mạnh từng mô hình và giảm phụ thuộc vào một cấu hình duy nhất.
 
 \section{Quá trình tinh chỉnh siêu tham số}
-Năm cấu hình Random Forest, XGBoost--trọng số, XGBoost--SMOTE nhẹ, LightGBM và CatBoost đều được tinh chỉnh bằng \texttt{RandomizedSearchCV} \cite{sklearnrandomizedsearch} với cross-validation 5-fold trên các đặc trưng đã mã hóa bằng TargetEncoder. Hàm tính điểm là \texttt{average\_precision}, tương ứng với Average Precision (AP), một thước đo dựa trên đường Precision--Recall nhằm thích ứng với dữ liệu mất cân bằng \cite{sklearnaverageprecision}. Số lần thử ngẫu nhiên là 80 cho Random Forest, 80 cho mỗi cấu hình XGBoost, 60 cho LightGBM và 40 cho CatBoost, với \texttt{random\_state = 42} để kết quả tái lập được. Kết quả cross-validation của từng cấu hình được trình bày trong Bảng \ref{tab:cv_results}. LightGBM với \texttt{scale\_pos\_weight} vượt trội rõ rệt so với bốn cấu hình còn lại, dẫn đầu về PR-AUC với 0{,}8525. Quy trình tinh chỉnh trên được cố định cho toàn bộ sáu thử nghiệm ở chương đánh giá; giữa các thử nghiệm chỉ có tập đặc trưng đầu vào thay đổi, nhờ đó mọi so sánh đều không bị ảnh hưởng bởi khác biệt về ngân sách tìm kiếm siêu tham số.
+Năm cấu hình Random Forest, XGBoost--trọng số, XGBoost--SMOTE nhẹ, LightGBM và CatBoost đều được tinh chỉnh bằng \texttt{RandomizedSearchCV} \cite{sklearnrandomizedsearch} với cross-validation 5-fold trên các đặc trưng đã mã hóa bằng TargetEncoder. Hàm tính điểm là \texttt{average\_precision}, tương ứng với Average Precision (AP), một thước đo dựa trên đường Precision--Recall nhằm thích ứng với dữ liệu mất cân bằng \cite{sklearnaverageprecision}. Số lần thử ngẫu nhiên là 80 cho Random Forest, 80 cho mỗi cấu hình XGBoost, 60 cho LightGBM và 40 cho CatBoost, với \texttt{random\_state = 42} để kết quả tái lập được. Kết quả cross-validation của từng cấu hình được trình bày trong Bảng \ref{tab:cv_results}. LightGBM với \texttt{scale\_pos\_weight} vượt trội rõ rệt so với bốn cấu hình còn lại, dẫn đầu về PR-AUC với 0{.}8525. Quy trình tinh chỉnh trên được cố định cho toàn bộ sáu thử nghiệm ở chương đánh giá; giữa các thử nghiệm chỉ có tập đặc trưng đầu vào thay đổi, nhờ đó mọi so sánh đều không bị ảnh hưởng bởi khác biệt về ngân sách tìm kiếm siêu tham số.
 
 \begin{table}[H]
 \centering
@@ -229,15 +229,15 @@ Năm cấu hình Random Forest, XGBoost--trọng số, XGBoost--SMOTE nhẹ, Lig
 \hline
 \textbf{Cấu hình} & \textbf{Số lần thử} & \textbf{Điểm PR-AUC tốt nhất (5-fold)} \\
 \hline
-Random Forest & 80 & 0{,}7555 \\
+Random Forest & 80 & 0{.}7555 \\
 \hline
-XGBoost (Scale Pos Weight) & 80 & 0{,}7973 \\
+XGBoost (Scale Pos Weight) & 80 & 0{.}7973 \\
 \hline
-XGBoost (Light SMOTE) & 80 & 0{,}7642 \\
+XGBoost (Light SMOTE) & 80 & 0{.}7642 \\
 \hline
-LightGBM (Scale Pos Weight) & 60 & 0{,}8525 \\
+LightGBM (Scale Pos Weight) & 60 & 0{.}8525 \\
 \hline
-CatBoost (Auto class weights) & 40 & 0{,}7883 \\
+CatBoost (Auto class weights) & 40 & 0{.}7883 \\
 \hline
 \end{tabularx}
 \caption{Số lần thử và điểm PR-AUC cross-validation tốt nhất của từng cấu hình}
