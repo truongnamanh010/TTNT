@@ -7,7 +7,7 @@ Lớp: CS106.F31.CN2.TTNT · GVHD: Nguyễn Đình Hiển
 **Nhóm 5:**
 - Ngô Thị Vân Giang — 25730020
 - Lê Vân Anh — 25730008
-- Bùi Thị Hoàng — 25730029
+- Bùi Thi Hoàng — 25730029
 - Huỳnh Trường An — 25730004
 - Trương Nam Anh — 25730010
 
