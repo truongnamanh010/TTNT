@@ -1,8 +1,8 @@
 \section{Chuẩn bị dữ liệu cho mô hình}
-\subsection{Tách đặc trưng và biến mục tiêu}
+%\subsection{Tách đặc trưng và biến mục tiêu}
 Từ bộ dữ liệu đã làm sạch, biến mục tiêu \texttt{is\_fraud} là nhãn gian lận được tách khỏi các đặc trưng đầu vào. Mười bốn đặc trưng được giữ lại gồm mười ba đặc trưng số \texttt{amt}, \texttt{age}, \texttt{amt\_vs\_card\_median}, \texttt{hour}, \texttt{txn\_freq\_hour}, \texttt{distance\_km}, \texttt{amt\_log}, \texttt{amt\_zscore\_card}, \texttt{is\_night}, \texttt{speed\_kmh}, \texttt{amt\_per\_km}, \texttt{txn\_count\_recent}, \texttt{amt\_vs\_card\_avg} và đặc trưng phân loại \texttt{category}. Đặc trưng phân loại \texttt{category} được mã hóa bằng \texttt{TargetEncoder}, tức mã hóa theo tương quan với biến mục tiêu, còn các đặc trưng số được chuẩn hóa về trung bình 0 và độ lệch chuẩn 1 bằng \texttt{StandardScaler}. Hai bước này được gói trong một \texttt{ColumnTransformer} \cite{pedregosa2011scikit} để đồng bộ giữa tập huấn luyện và tập kiểm tra.
 
-\subsection{Chia tập dữ liệu}
+%\subsection{Chia tập dữ liệu}
 Bộ dữ liệu 30\,058 giao dịch được chia theo tỷ lệ 80–20 bằng hàm \texttt{train\_test\_split} với \texttt{stratify = y} và \texttt{random\_state = 42}, cho tập huấn luyện 24\,046 mẫu, trong đó có 106 giao dịch gian lận, và tập kiểm tra 6\,012 mẫu, trong đó có 27 giao dịch gian lận. Tập huấn luyện được chia tiếp thành hai phần: phần Fit gồm 19\,236 mẫu, chiếm 80\%, dùng để huấn luyện và tinh chỉnh mô hình; phần Validation gồm 4\,810 mẫu, chiếm 20\%, dùng riêng để chọn ngưỡng quyết định. Tập kiểm tra chỉ được dùng đúng một lần để đánh giá cuối cùng.
 
 Để tránh rò rỉ dữ liệu, mọi quy tắc học từ dữ liệu đều được tính riêng trên tập huấn luyện rồi mới áp dụng sang tập kiểm tra: giới hạn xử lý giá trị bất thường được suy ra từ tập huấn luyện, \texttt{StandardScaler} và \texttt{TargetEncoder} chỉ được học trên tập huấn luyện. Các giá trị bất thường của đặc trưng số được giới hạn theo quy tắc IQR tính trên tập huấn luyện thay vì bị xóa, vì giá trị bất thường có thể chính là giao dịch gian lận.

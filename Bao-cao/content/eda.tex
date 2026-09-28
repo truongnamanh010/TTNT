@@ -52,14 +52,19 @@ distance\_km & 162{,}10 & 0 (0\%) & 0 \\
 
 Đáng chú ý, 78{,}2\% số giao dịch gian lận nằm trong vùng giá trị bất thường của cột \texttt{amt}. Vì vậy, đồ án không xóa bỏ các giá trị bất thường ngay ở bước này mà chỉ giới hạn chúng theo quy tắc IQR sau khi chia tập huấn luyện và tập kiểm tra, nhằm tránh làm mất đi chính những giao dịch gian lận.
 
+
+
 \section{Quan hệ giữa các đặc trưng}
-Hình \ref{fig:scatter_features} trình bày quan hệ cặp giữa ba đặc trưng hành vi gồm số lần giao dịch gần đây \texttt{txn\_count\_recent}, tốc độ di chuyển \texttt{speed\_kmh} và tỷ lệ số tiền so với trung bình thẻ \texttt{amt\_vs\_card\_avg}, tô màu theo nhãn gian lận. Giao dịch gian lận có tốc độ di chuyển và tỷ lệ số tiền so với trung bình thẻ cao hơn rõ rệt: trung vị \texttt{speed\_kmh} là 59{,}4 km/h so với 21{,}2 km/h của giao dịch hợp lệ, trung vị \texttt{amt\_vs\_card\_avg} là 1{,}94 so với 0{,}67, cho thấy gian lận thường phát sinh ở nơi xa nơi ở quen thuộc và với số tiền vượt trung bình chi tiêu của thẻ. Ngược lại, \texttt{txn\_count\_recent} gần như không phân biệt hai lớp (trung vị 20 so với 19), nên chủ yếu đóng vai trò đặc trưng bổ trợ.
 
 \begin{figure}[H]
-    \centering
-    \includegraphics[width=1.0\linewidth]{figures/fig_scatter_features.png}
-    \caption{Quan hệ cặp giữa các đặc trưng hành vi theo nhãn gian lận}
-    \label{fig:scatter_features}
+	\centering
+	\includegraphics[width=0.9\linewidth]{figures/fig_scatter_features.png}
+	\caption{Quan hệ cặp giữa các đặc trưng hành vi theo nhãn gian lận}
+	\label{fig:scatter_features}
 \end{figure}
+
+Hình \ref{fig:scatter_features} trình bày quan hệ cặp giữa ba đặc trưng hành vi gồm số lần giao dịch gần đây \texttt{txn\_count\_recent}, tốc độ di chuyển \texttt{speed\_kmh} và tỷ lệ số tiền so với trung bình thẻ \texttt{amt\_vs\_card\_avg}, tô màu theo nhãn gian lận. Giao dịch gian lận có tốc độ di chuyển và tỷ lệ số tiền so với trung bình thẻ cao hơn rõ rệt: trung vị \texttt{speed\_kmh} là 59{,}4 km/h so với 21{,}2 km/h của giao dịch hợp lệ, trung vị \texttt{amt\_vs\_card\_avg} là 1{,}94 so với 0{,}67, cho thấy gian lận thường phát sinh ở nơi xa nơi ở quen thuộc và với số tiền vượt trung bình chi tiêu của thẻ. Ngược lại, \texttt{txn\_count\_recent} gần như không phân biệt hai lớp (trung vị 20 so với 19), nên chủ yếu đóng vai trò đặc trưng bổ trợ.
+
+
 
 Qua các phân tích trên, 14 đặc trưng được chọn để đưa vào mô hình gồm: \texttt{amt}, \texttt{age}, \texttt{amt\_vs\_card\_median}, \texttt{hour}, \texttt{txn\_freq\_hour}, \texttt{distance\_km}, \texttt{category}, \texttt{amt\_log}, \texttt{amt\_zscore\_card}, \texttt{is\_night}, \texttt{speed\_kmh}, \texttt{amt\_per\_km}, \texttt{txn\_count\_recent} và \texttt{amt\_vs\_card\_avg}. Các cột định danh như \texttt{cc\_num} hay \texttt{trans\_num} không được dùng trực tiếp vì mô hình có thể học thuộc mã thay vì học quy luật tổng quát của gian lận.

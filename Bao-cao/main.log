@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.141592653-2.6-0.999998 (TeX Live 2026/Arch Linux) (preloaded format=xelatex 2026.9.14)  26 SEP 2026 15:24
+This is XeTeX, Version 3.141592653-2.6-0.999998 (TeX Live 2026/Arch Linux) (preloaded format=xelatex 2026.9.14)  28 SEP 2026 22:53
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -2638,12 +2638,7 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 
 [2]
 \bbl@ensure@vietnamese {Chương} 2.
-(./content/thu_thap_du_lieu.tex
-File: figures/code_cleaning_1.png Graphic file (type bmp)
-<figures/code_cleaning_1.png>
-File: figures/code_cleaning_2.png Graphic file (type bmp)
-<figures/code_cleaning_2.png>
- [3
+(./content/thu_thap_du_lieu.tex [3
 
 ]
 
@@ -2654,6 +2649,9 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                \addtolength{\topmargin}{-0.51117pt}.
 
 [4]
+File: figures/code_features_1.png Graphic file (type bmp)
+<figures/code_features_1.png>
+)
 
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
 (fancyhdr)                Make it at least 12.51117pt, for example:
@@ -2662,9 +2660,6 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                \addtolength{\topmargin}{-0.51117pt}.
 
 [5]
-File: figures/code_features_1.png Graphic file (type bmp)
-<figures/code_features_1.png>
-
 
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
 (fancyhdr)                Make it at least 12.51117pt, for example:
@@ -2672,20 +2667,12 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                You might also make \topmargin smaller:
 (fancyhdr)                \addtolength{\topmargin}{-0.51117pt}.
 
-[6])
-
-Package fancyhdr Warning: \headheight is too small (12.0pt): 
-(fancyhdr)                Make it at least 12.51117pt, for example:
-(fancyhdr)                \setlength{\headheight}{12.51117pt}.
-(fancyhdr)                You might also make \topmargin smaller:
-(fancyhdr)                \addtolength{\topmargin}{-0.51117pt}.
-
-[7]
+[6]
 \bbl@ensure@vietnamese {Chương} 3.
 (./content/eda.tex
 File: figures/fig_distributions.png Graphic file (type bmp)
 <figures/fig_distributions.png>
- [8
+ [7
 
 ]
 File: figures/fig_fraud_category.png Graphic file (type bmp)
@@ -2704,7 +2691,7 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                You might also make \topmargin smaller:
 (fancyhdr)                \addtolength{\topmargin}{-0.48187pt}.
 
-[9]
+[8]
 File: figures/fig_scatter_features.png Graphic file (type bmp)
 <figures/fig_scatter_features.png>
 
@@ -2715,7 +2702,7 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                You might also make \topmargin smaller:
 (fancyhdr)                \addtolength{\topmargin}{-0.48187pt}.
 
-[10])
+[9])
 
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
 (fancyhdr)                Make it at least 12.48187pt, for example:
@@ -2723,9 +2710,9 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                You might also make \topmargin smaller:
 (fancyhdr)                \addtolength{\topmargin}{-0.48187pt}.
 
-[11]
+[10]
 \bbl@ensure@vietnamese {Chương} 4.
-(./content/mo_hinh.tex [12
+(./content/mo_hinh.tex [11
 
 ]
 Underfull \hbox (badness 3138) in paragraph at lines 42--42
@@ -2745,7 +2732,7 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                You might also make \topmargin smaller:
 (fancyhdr)                \addtolength{\topmargin}{-0.48187pt}.
 
-[13]
+[12]
 Underfull \hbox (badness 10000) in paragraph at lines 76--76
 []|\TU/TimesNewRoman(1)/m/n/11 min_samples_split\TU/TimesNewRoman(0)/m/n/11 ,
  []
@@ -2763,7 +2750,7 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                You might also make \topmargin smaller:
 (fancyhdr)                \addtolength{\topmargin}{-0.48187pt}.
 
-[14]
+[13]
 LaTeX Font Info:    Calculating math sizes for size <10.5> on input line 155.
 LaTeX Font Info:    Font shape `TU/texgyretermes-math.otf(2)/m/n' will be
 (Font)              scaled to size 10.50111pt on input line 155.
@@ -2789,7 +2776,7 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                You might also make \topmargin smaller:
 (fancyhdr)                \addtolength{\topmargin}{-0.48187pt}.
 
-[15]
+[14]
 Underfull \hbox (badness 10000) in paragraph at lines 212--212
 []|\TU/TimesNewRoman(1)/m/n/11 bagging_temperature\TU/TimesNewRoman(0)/m/n/11 ,
 
@@ -2802,7 +2789,7 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                You might also make \topmargin smaller:
 (fancyhdr)                \addtolength{\topmargin}{-0.48187pt}.
 
-[16])
+[15])
 
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
 (fancyhdr)                Make it at least 12.48187pt, for example:
@@ -2810,7 +2797,7 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                You might also make \topmargin smaller:
 (fancyhdr)                \addtolength{\topmargin}{-0.48187pt}.
 
-[17]
+[16]
 \bbl@ensure@vietnamese {Chương} 5.
 (./content/danh_gia.tex
 Underfull \hbox (badness 10000) in paragraph at lines 27--27
@@ -2822,9 +2809,17 @@ Underfull \hbox (badness 10000) in paragraph at lines 27--27
 []|\TU/TimesNewRoman(0)/m/n/11 LightGBM, XGBoost, Random Forest,
  []
 
-[18
+[17
 
 ]
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 12.51117pt, for example:
+(fancyhdr)                \setlength{\headheight}{12.51117pt}.
+(fancyhdr)                You might also make \topmargin smaller:
+(fancyhdr)                \addtolength{\topmargin}{-0.51117pt}.
+
+[18]
 
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
 (fancyhdr)                Make it at least 12.51117pt, for example:
@@ -2841,14 +2836,6 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                \addtolength{\topmargin}{-0.51117pt}.
 
 [20]
-
-Package fancyhdr Warning: \headheight is too small (12.0pt): 
-(fancyhdr)                Make it at least 12.51117pt, for example:
-(fancyhdr)                \setlength{\headheight}{12.51117pt}.
-(fancyhdr)                You might also make \topmargin smaller:
-(fancyhdr)                \addtolength{\topmargin}{-0.51117pt}.
-
-[21]
 File: figures/fig_permutation_importance_lightgbm.png Graphic file (type bmp)
 <figures/fig_permutation_importance_lightgbm.png>
 
@@ -2859,7 +2846,7 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                You might also make \topmargin smaller:
 (fancyhdr)                \addtolength{\topmargin}{-0.51117pt}.
 
-[22]
+[21]
 LaTeX Font Info:    Font shape `TU/texgyretermes-math.otf(2)/m/n' will be
 (Font)              scaled to size 10.00107pt on input line 219.
 LaTeX Font Info:    Font shape `TU/texgyretermes-math.otf(2)/m/n' will be
@@ -2868,8 +2855,6 @@ LaTeX Font Info:    Font shape `TU/texgyretermes-math.otf(3)/m/n' will be
 (Font)              scaled to size 9.99893pt on input line 219.
 LaTeX Font Info:    Font shape `TU/texgyretermes-math.otf(3)/m/n' will be
 (Font)              scaled to size 7.3992pt on input line 219.
-File: figures/fig_experiment_compare.png Graphic file (type bmp)
-<figures/fig_experiment_compare.png>
 
 
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
@@ -2878,7 +2863,9 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                You might also make \topmargin smaller:
 (fancyhdr)                \addtolength{\topmargin}{-0.51117pt}.
 
-[23]
+[22]
+File: figures/fig_experiment_compare.png Graphic file (type bmp)
+<figures/fig_experiment_compare.png>
 File: figures/fig_confusion_matrix.png Graphic file (type bmp)
 <figures/fig_confusion_matrix.png>
 
@@ -2889,9 +2876,18 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                You might also make \topmargin smaller:
 (fancyhdr)                \addtolength{\topmargin}{-0.51117pt}.
 
-[24]
+[23]
 File: figures/fig_pr_curve.png Graphic file (type bmp)
 <figures/fig_pr_curve.png>
+
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 12.51117pt, for example:
+(fancyhdr)                \setlength{\headheight}{12.51117pt}.
+(fancyhdr)                You might also make \topmargin smaller:
+(fancyhdr)                \addtolength{\topmargin}{-0.51117pt}.
+
+[24]
 File: figures/fig_calibration_lightgbm.png Graphic file (type bmp)
 <figures/fig_calibration_lightgbm.png>
 
@@ -3266,12 +3262,12 @@ Package logreq Info: Writing requests to 'main.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 72672 strings out of 470191
- 1755108 string characters out of 5479697
- 3083085 words of memory out of 5000000
- 100085 multiletter control sequences out of 15000+600000
+ 72652 strings out of 470191
+ 1754505 string characters out of 5479697
+ 3083009 words of memory out of 5000000
+ 100067 multiletter control sequences out of 15000+600000
  636482 words of font info for 129 fonts, out of 8000000 for 9000
  14 hyphenation exceptions out of 8191
- 117i,17n,131p,1716b,5602s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 117i,17n,131p,1716b,5594s stack positions out of 10000i,1000n,20000p,200000b,200000s
 
-Output written on main.xdv (34 pages, 639104 bytes).
+Output written on main.pdf (34 pages).
